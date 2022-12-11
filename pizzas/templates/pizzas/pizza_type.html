@@ -1,0 +1,19 @@
+{% extends "pizzas/base.html" %}
+
+{% block content %}
+
+<p> Pizza Types </p>
+
+<ul>
+    {% for indiv_pizza in all_pizza_types %}
+
+    <li> 
+        <a href="{% url 'pizzas:indiv_pizza' indiv_pizza.id %}"> {{ indiv_pizza }} </a>
+    </li>
+
+    {% empty %}
+    <li> No pizza types have been added yet. </li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
