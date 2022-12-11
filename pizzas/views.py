@@ -14,5 +14,4 @@ def indiv_pizza(request, pizza_type_id):
     iv = Pizza.objects.get(id=pizza_type_id)
     toppings = Topping.objects.filter(indiv_pizza=iv)
     context = {'indiv_pizza':iv, 'toppings':toppings}
-
     return render(request, 'pizzas/indiv_pizza.html', context)
