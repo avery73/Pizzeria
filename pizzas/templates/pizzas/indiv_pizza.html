@@ -3,16 +3,18 @@
 {% block content %}
 
 <p> Pizza: {{ indiv_pizza }} </p>
+<p> Toppings: </p>
 
 <ul>
-    {% for t in toppings %}
+{% for t in toppings %}
 
-    <li> {{ t.text }} </li>
+    <li> {{ t.topping_name }} </li>
 
-    {% empty %}
+{% empty %}
+
 
     <li> This pizza is not currently available </li>
-    {% endfor %}
+{% endfor %}
 
 </ul>
 

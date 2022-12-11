@@ -15,8 +15,8 @@ class Topping(models.Model):
     indiv_pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
     topping_name = models.TextField(max_length=100)
 
-    class Meta:
-        verbose_name_plural = 'toppings'
+    #class Meta:
+        #verbose_name_plural = 'toppings'
     # he uses class meta to rename the website form entry to entries, but we don't need to do that
 
     def __str__(self):
@@ -27,6 +27,9 @@ class Comment(models.Model):
    text = models.CharField(max_length=200)
    date_added = models.DateTimeField(auto_now_add=True,blank=True)
  
+   class Meta:
+       ordering = ('date_added',)
+
    def __str__(self):
        return self.text
 
