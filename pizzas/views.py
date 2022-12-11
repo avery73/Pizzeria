@@ -15,3 +15,13 @@ def indiv_pizza(request, pizza_type_id):
     toppings = Topping.objects.filter(indiv_pizza=iv)
     context = {'indiv_pizza':iv, 'toppings':toppings}
     return render(request, 'pizzas/indiv_pizza.html', context)
+
+def comments(request, post_id):
+   if request.method == 'GET' and request.GET.get("btn1"):
+       comment = request.GET.get("comment")
+       Comment.objects.create(post_id=post_id, text=comment, date_added=date.today())
+   comments = Comment.objects.filter(post=post_id)
+   post = Pizza.objects.get(id=post_id)
+ 
+   context = {'post':post,'comments':comments}
+   return render(request, 'pizzas/indiv_pizza.html',context)
