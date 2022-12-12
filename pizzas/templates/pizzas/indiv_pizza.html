@@ -5,6 +5,7 @@
 <p> Pizza: {{ indiv_pizza }} </p>
 <p> Toppings: </p>
 
+
 <ul>
 {% for t in toppings %}
 
@@ -12,9 +13,13 @@
 
 {% empty %}
 
-
     <li> This pizza is not currently available </li>
+
+<li> {{ indiv_image }} </li>
+
 {% endfor %}
+
+
 
 </ul>
 

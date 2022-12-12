@@ -13,8 +13,11 @@ def pizza_type(request):
 def indiv_pizza(request, pizza_type_id):
     indiv_pizza = Pizza.objects.get(id=pizza_type_id)
     toppings = Topping.objects.filter(indiv_pizza=indiv_pizza)
-    context = {'indiv_pizza':indiv_pizza, 'toppings':toppings}
+    indiv_image = Image.objects.all()
+    #image = Pizza.ImageField(max_length=255, upload_to='images/')
+    context = {'indiv_pizza':indiv_pizza, 'toppings':toppings, 'indiv_image':indiv_image} #, 'image':image}
     return render(request, 'pizzas/indiv_pizza.html', context)
+
 
 
 

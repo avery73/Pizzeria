@@ -7,7 +7,4 @@ from .models import *
 ##        fields = ['description','image']
  #       labels = {'description': 'What would you like to say?'}
 
-class CommentForm(forms.ModelForm):
-    class Meta:
-        model = Comment
-        fields = ('text', 'date_added')
+ 
